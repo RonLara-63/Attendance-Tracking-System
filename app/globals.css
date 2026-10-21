@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { @apply bg-paper text-ink antialiased; font-size: 17px; line-height: 1.5; }
+:focus-visible { outline: 3px solid #0e7c86; outline-offset: 2px; }
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 font-bold transition-colors disabled:cursor-not-allowed disabled:opacity-50; min-height: 44px; }
+  .btn-primary { @apply bg-accent text-white hover:bg-accent-dark; }
+  .btn-quiet { @apply border border-line bg-white text-ink hover:bg-paper; }
+  .btn-danger { @apply bg-danger text-white hover:bg-red-900; }
+  .btn-sm { @apply px-3 py-1 text-sm; min-height: 36px; }
+  .input { @apply w-full rounded-md border border-line bg-white px-3 py-2 focus:border-accent focus:outline-none; min-height: 44px; }
+  .label { @apply mb-1 block text-sm font-bold text-ink-soft; }
+  .card { @apply rounded-lg border border-line bg-white; }
+  .table-wrap { @apply overflow-x-auto rounded-lg border border-line bg-white; }
+  .table { @apply w-full text-left; }
+  .table th { @apply whitespace-nowrap border-b border-line bg-paper px-4 py-3 text-sm font-bold text-ink-soft; }
+  .table td { @apply border-b border-line px-4 py-3 align-middle; }
+  .table tr:last-child td { @apply border-b-0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
